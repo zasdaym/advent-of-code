@@ -1,9 +1,5 @@
-use std::fs::read_to_string;
-
 pub fn main() {
-    let content = read_to_string("input/01.txt").unwrap();
-
-    let (mut left, mut right): (Vec<i32>, Vec<i32>) = content
+    let (mut left, mut right): (Vec<i32>, Vec<i32>) = include_str!("../../input/01.txt")
         .lines()
         .map(|line| {
             let (l, r) = line.split_once("   ").unwrap();

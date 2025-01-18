@@ -1,9 +1,7 @@
-use std::{collections::HashMap, fs::read_to_string};
+use std::collections::HashMap;
 
 pub fn main() {
-    let content = read_to_string("input/01.txt").unwrap();
-
-    let (left, right): (Vec<i32>, HashMap<i32, i32>) = content
+    let (left, right): (Vec<i32>, HashMap<i32, i32>) = include_str!("../../input/01.txt")
         .lines()
         .map(|line| {
             let (num1, num2) = line.split_once("   ").unwrap();
