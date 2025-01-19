@@ -6,16 +6,8 @@ fn main() {
 fn solve(input: &str) -> i32 {
     let grid: Vec<Vec<char>> = input.lines().map(|line| line.chars().collect()).collect();
 
-    if grid.is_empty() {
-        return 0;
-    }
-
     let height = grid.len();
     let width = grid[0].len();
-
-    if height < 3 || width < 3 {
-        return 0;
-    }
 
     let mut result = 0;
 
