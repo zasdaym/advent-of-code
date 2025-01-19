@@ -1,4 +1,4 @@
-pub fn main() {
+fn main() {
     let result = include_str!("../../input/02.txt")
         .lines()
         .map(|line| {

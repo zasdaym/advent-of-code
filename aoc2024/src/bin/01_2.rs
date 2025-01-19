@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-pub fn main() {
+fn main() {
     let (left, right): (Vec<i32>, HashMap<i32, i32>) = include_str!("../../input/01.txt")
         .lines()
         .map(|line| {

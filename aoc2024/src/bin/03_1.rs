@@ -1,6 +1,6 @@
 use regex::Regex;
 
-pub fn main() {
+fn main() {
     let pattern = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();
     let result = include_str!("../../input/03.txt")
         .lines()

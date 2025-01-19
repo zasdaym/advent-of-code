@@ -1,6 +1,6 @@
 use regex::Regex;
 
-pub fn main() {
+fn main() {
     let pattern = Regex::new(r"don't|do|mul\((\d+),(\d+)\)").unwrap();
     let mut finalizer = 1;
     let result = include_str!("../../input/03.txt")

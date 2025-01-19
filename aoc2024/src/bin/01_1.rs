@@ -1,4 +1,4 @@
-pub fn main() {
+fn main() {
     let (mut left, mut right): (Vec<i32>, Vec<i32>) = include_str!("../../input/01.txt")
         .lines()
         .map(|line| {
