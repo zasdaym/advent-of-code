@@ -1,18 +1,20 @@
 fn main() {
-    let input = include_str!("../../input/04.txt");
+    let result = solve(include_str!("../../input/04.txt"));
+    println!("{}", result);
+}
+
+fn solve(input: &str) -> i32 {
     let grid: Vec<Vec<char>> = input.lines().map(|line| line.chars().collect()).collect();
 
     if grid.is_empty() {
-        println!("0");
-        return;
+        return 0;
     }
 
     let height = grid.len();
     let width = grid[0].len();
 
     if height < 3 || width < 3 {
-        println!("0");
-        return;
+        return 0;
     }
 
     let mut result = 0;
@@ -42,5 +44,5 @@ fn main() {
         }
     }
 
-    println!("{}", result);
+    return result;
 }

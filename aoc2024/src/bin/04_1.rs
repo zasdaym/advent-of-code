@@ -1,5 +1,9 @@
 fn main() {
-    let input = include_str!("../../input/04.txt");
+    let result = solve(include_str!("../../input/04.txt"));
+    println!("{}", result)
+}
+
+fn solve(input: &str) -> i32 {
     let grid: Vec<Vec<char>> = input.lines().map(|line| line.chars().collect()).collect();
 
     let target = vec!['X', 'M', 'A', 'S'];
@@ -7,16 +11,16 @@ fn main() {
     let height = grid.len();
     let width = grid[0].len();
 
-    let mut count = 0;
+    let mut result = 0;
 
     // Check horizontally
     for row in 0..height {
         for col in 0..=width - 4 {
             if (0..4).all(|i| grid[row][col + i] == target[i]) {
-                count += 1;
+                result += 1;
             }
             if (0..4).all(|i| grid[row][col + i] == target_rev[i]) {
-                count += 1;
+                result += 1;
             }
         }
     }
@@ -25,10 +29,10 @@ fn main() {
     for row in 0..=height - 4 {
         for col in 0..width {
             if (0..4).all(|i| grid[row + i][col] == target[i]) {
-                count += 1;
+                result += 1;
             }
             if (0..4).all(|i| grid[row + i][col] == target_rev[i]) {
-                count += 1;
+                result += 1;
             }
         }
     }
@@ -37,10 +41,10 @@ fn main() {
     for row in 0..=height - 4 {
         for col in 0..=width - 4 {
             if (0..4).all(|i| grid[row + i][col + i] == target[i]) {
-                count += 1;
+                result += 1;
             }
             if (0..4).all(|i| grid[row + i][col + i] == target_rev[i]) {
-                count += 1;
+                result += 1;
             }
         }
     }
@@ -49,13 +53,13 @@ fn main() {
     for row in 3..height {
         for col in 0..=width - 4 {
             if (0..4).all(|i| grid[row - i][col + i] == target[i]) {
-                count += 1;
+                result += 1;
             }
             if (0..4).all(|i| grid[row - i][col + i] == target_rev[i]) {
-                count += 1;
+                result += 1;
             }
         }
     }
 
-    println!("{}", count);
+    return result;
 }
