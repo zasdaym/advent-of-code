@@ -26,7 +26,8 @@ fn solve(input: &str) -> i32 {
     let exit_path = find_exit_path(&grid, guard);
     let mut result = 0;
 
-    for (idx, &pos) in exit_path.iter().enumerate() {
+    // Only try positions along the exit path
+    for &pos in &exit_path {
         if grid[pos.0 as usize][pos.1 as usize] != '.' {
             continue;
         }
